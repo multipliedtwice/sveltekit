@@ -30,7 +30,7 @@ export const handle: Handle = async (ctx) => {
     'Cache-Control': 'max-age=180, stale-while-revalidate=259200',
     ...response.headers,
   })
-
+  console.log('headers :>> ', headers);
   return new Response(minify(await response.text(), minification_options), {
     status: response.status,
     headers
